@@ -1,0 +1,27 @@
+
+<nav class="navbar navbar-dark bg-dark ">
+    <header class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="#">PUSH UP</a>
+   
+  
+        <ul class="nav nav-pills">
+  
+            <!--<li class="nav-item ">
+                <a class="nav-link " [routerLink]="['/usuarios']" routerLinkActive="router-link-active" >Usuarios</a>
+            </li>
+        <li class="nav-item ">
+              <a class="nav-link " [routerLink]="['/productos']" routerLinkActive="router-link-active" >Productos</a>
+          </li>-->
+          
+          <a class="navbar-brand" href="#">Bienvenido, {{usuarioLogueado}}</a>
+  
+            
+        </ul>
+        <ul>
+            <!--<button class="btn btn-outline-light my-2 my-sm-0" >Perfil</button>-->
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)=salir() >Cerrar Sesión</button>
+        </ul>
+        
+        
+    </header>
+  </nav>

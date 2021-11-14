@@ -1,0 +1,58 @@
+<app-menu-admin></app-menu-admin>
+
+
+<div id="botonAtras" class="text-left">
+    <button class="previous btn btn-secondary" type="button" id="btnAtras" [routerLink]="['/productos']">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    
+    </button>
+</div>
+<div class="container mt-4">
+    <div class="row">
+        <h2 class="text-center">Agregue un producto</h2>
+    </div>
+</div>
+
+
+<div class="text-center" id="contenedor">
+    <main class="form-abm">
+            <form>
+                
+
+                <div class="form-group">
+                    <label>Nombre: </label>
+                    <input type="text" class="form-control" id="txtNewProd"  [(ngModel)]="newProd" name="NewProd">
+                    
+                </div>
+                
+                
+                <div class="form-group">
+                    <label>Descripcion: </label>
+                    <input type="text" class="form-control" id="txtNewDesc"  [(ngModel)]="newDesc" name="NewDesc">
+                    
+                </div>
+                <div class="form-group">
+                    <label>Precio: </label>
+                    <input type="text" class="form-control" id="txtNewPrecio"  [(ngModel)]="newPrecio" name="NewPrecio" >
+                    
+                </div>
+                <div class="form-group">
+                    
+                    <label>categoria: </label>
+
+                    <input type="text" class="form-control" id="txtNewCategoria"  [(ngModel)]="newCategoria" name="NewCategoria" >
+                    <!--<select >
+                        <option *ngFor="let item of categorias" value="item">{{item}}</option>
+                    </select>-->
+                </div>
+                
+                <button class="w-100 btn btn-lg btn-primary" type="button" id="btnGuardar"  (click)=guardar()>Guardar</button>
+                
+            </form>
+            <br>
+           
+            <div  id="cartel" class="alert alert-danger">
+                <p id="respuesta">{{alerta}}</p>
+            </div>
+    </main>
+</div>

@@ -1,0 +1,28 @@
+
+
+<nav class="navbar navbar-dark bg-dark ">
+    <header class="container d-flex justify-content-between">
+        <a class="navbar-brand" href="#">PUSH UP</a>
+   
+  
+        <ul class="nav nav-pills">
+  
+            <li class="nav-item ">
+                <a class="nav-link " [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+            </li>
+  
+            <li class="nav-item ">
+              <a class="nav-link " [routerLink]="['/contacto']" routerLinkActive="router-link-active" >Contacto</a>
+          </li>
+  
+            
+        </ul>
+        <ul>
+            <button class="btn btn-outline-light my-2 my-sm-0" [routerLink]="['/signin']" routerLinkActive="router-link-active">Registrarse</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/login']" routerLinkActive="router-link-active">Iniciar Sesión</button>
+        
+        </ul>
+        
+        
+    </header>
+  </nav>

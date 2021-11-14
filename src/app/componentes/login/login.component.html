@@ -1,0 +1,34 @@
+
+<app-navbar></app-navbar>
+<div class="container mt-4">
+    <div class="row">
+        <h2 class="text-center">Accede a la cuenta</h2>
+    </div>
+</div>
+<div class="text-center"  id="contenedor">
+      <main class="form-signin">
+        <div id= "cuadroLogin">
+          <form>
+        
+            <div class="form-floating">
+              <input type="email" class="form-control" id="txtEmail" (keyup)="validar()" [(ngModel)]="usuario.email" name="email" autofocus>
+              <label for="floatingInput">Email: </label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="txtPass" (keyup)="validar()" [(ngModel)]="usuario.pass" name="pass" >
+              <label for="floatingPassword">Contraseña:</label>
+            </div>
+    
+            <button class="w-100 btn btn-lg btn-primary" type="button" (click)=ingresar() id="btnEnviar" [disabled]="btnHabilitado">Ingresar</button>
+    
+          </form>
+        </div>
+        <br>
+
+        <div  id="cartel" class="alert alert-danger">
+            <p id="respuesta">{{alerta}}</p>
+        </div>
+
+
+    </main>
+</div>

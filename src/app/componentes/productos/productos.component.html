@@ -1,0 +1,96 @@
+<app-menu-admin></app-menu-admin>
+<div class="form-tablas" id= "clases">
+
+    <div class="row">
+        <div class="align-items-center p-1 ">
+            <h1 class="mb-1 text-center">Productos:  </h1> 
+
+            <br>
+        </div>
+        
+        <div class="row align-items p-3">
+            <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/nuevo']" >Agregar producto</button>
+
+        
+        </div>
+    <br>
+    <br>
+    </div>
+    
+   
+
+    
+    
+    <div class="row align-items-center p-3 ">
+        <br>
+        <div class=" p-1   d-flex justify-content-center">
+            
+            <label>Filtro:</label>
+            <div class="col-sm-7">
+                <select class="form-select"  id="slctTipo"></select>
+            </div>
+            
+        </div>
+        
+
+        <table class="table" id="tabla-Prod" >
+            <thead>
+            <tr>
+                <th scope="col">Id:</th>
+                <th scope="col">Nombre:</th>
+                <th scope="col">Descripcion:</th>
+                <th scope="col">Precio: </th>
+                <th scope="col">Categoria: </th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody id="tableProd">
+                <tr *ngFor="let item of Productos"  >
+                    <td><label ><th scope="row">{{item.idProducto}}</th></label></td>
+                            
+                    
+                    <td>
+                        <label *ngIf="modificar!=item.idProducto"><td>{{item.nombreProducto}}</td></label>
+                        <input *ngIf="modificar==item.idProducto" type="text" class="form-control" id="txtProd"  [(ngModel)]="item.nombreProducto" name="Prod{{item.nombreProducto}}">
+                    </td>
+                
+                    <td>
+                        <label *ngIf="modificar!=item.idProducto"><td>{{item.descProducto}}</td></label>
+                        <input *ngIf="modificar==item.idProducto" type="text" class="form-control" id="txtDesc"  [(ngModel)]="item.descProducto" name="Desc{{item.descProducto}}">
+                    </td>
+        
+                    <td>
+                        <label *ngIf="modificar!=item.idProducto"><td>{{item.precioProducto}}</td></label>
+                        <input *ngIf="modificar==item.idProducto" type="text" class="form-control" id="txtPrecio"  [(ngModel)]="item.precioProducto" name="Precio{{item.precioProducto}}" >
+                    </td>
+                
+                    <td>
+                        <label *ngIf="modificar!=item.idProducto"> <td>{{item.categoria}}</td></label>
+                        <input *ngIf="modificar==item.idProducto" type="text" class="form-control" id="txtCategoria"  [(ngModel)]="item.categoria" name="Categoria{{item.categoria}}" >
+                    </td>
+                
+                
+                     <td>
+                         <button *ngIf="modificar!=item.idProducto" class="btn  btn-primary modificacion" type="button" value="modificar"(click)="modificando(item.idProducto)">Modificar</button>
+                         <label *ngIf="modificar==item.idProducto"></label>
+                    </td>
+                    <td>
+                        <button *ngIf="modificar!=item.idProducto" class="btn  btn-danger modificacion" type="button" >Borrar</button>
+                        <button  *ngIf="modificar==item.idProducto"class="btn  btn-success modificacion" type="button" value="guardar" (click)="guardar(item.idProducto)">Guardar</button>
+                    </td>
+                
+                                
+                   
+    
+                </tr> 
+            
+                
+            </tbody>
+        
+
+        </table>
+    </div>
+
+
+</div> 

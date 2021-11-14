@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+
+<div id="botonAtras" class="text-left">
+    <button class="previous btn btn-secondary" type="button" id="btnAtras" [routerLink]="['/home']">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    
+    </button>
+</div>
+<div class="container mt-4">
+    <div class="row">
+        <h2 class="text-center">Cree una cuenta</h2>
+    </div>
+</div>
+
+
+<div class="text-center" id="contenedor">
+    <main class="form-abm">
+            <form>
+                
+
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="txtNewEmail" (keyup)="validar()" [(ngModel)]="newEmail" name="NewEmail">
+                    <label>Email: </label>
+                </div>
+                
+                
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="txtNewPass" (keyup)="validar()" [(ngModel)]="newPass" name="NewPass">
+                    <label>Contraseña: </label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="txtNewPass2" (keyup)="validar()" [(ngModel)]="newPass2" name="NewPass2" >
+                    <label>Repetir Contraseña: </label>
+                </div>
+                <small id="restLongContra">
+                    Mínimo 8 caracteres, 1 letra mayúscula, 1 minúscula y 1 número
+                </small>
+                <button class="w-100 btn btn-lg btn-primary" type="button" id="btnGuardar" [disabled]="btnHabilitado" (click)="enviar()">Guardar</button>
+                
+            </form>
+            <br>
+           
+            <div >
+                <p id="respuesta">{{alerta}}</p>
+            </div>
+    </main>
+</div>
