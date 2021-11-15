@@ -13,6 +13,8 @@ import { MenuAdminComponent } from './componentes/menu-admin/menu-admin.componen
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { HttpClient,  HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -33,7 +35,8 @@ import { HttpClient,  HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule, 
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
