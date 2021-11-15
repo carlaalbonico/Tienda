@@ -3,6 +3,12 @@ html,
 body {
   height: 100%;
 }
+footer{
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2.5rem;
+  background-color: rgb(138, 143, 140);
+}
 #fondo{ 
   background-color: rgb(245, 245, 245);
 }
@@ -35,7 +41,14 @@ body {
   margin: auto;
  
 }
+.tarjetas{
 
+    position: relative;
+    padding: 1rem;
+    margin: 1rem- 15px 0;
+    border: solid #f7f7f9;
+    border-width: 0.2rem 0 0;
+}
 .form-signin {
     width: 100%;
     max-width: 330px;
@@ -82,4 +95,5 @@ body {
     margin: auto;
    
   }    
+  
   

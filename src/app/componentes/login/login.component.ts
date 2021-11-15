@@ -49,16 +49,12 @@ export class LoginComponent implements OnInit {
 
   ingresar(): void {
     
-   
-    
-    
-    
     let datos = new FormData();
     datos.append("user", this.usuario.email);
     datos.append("pass", this.usuario.pass);
-    //La función subscribe() es asíncrono
+    
     this.api.enviarDatosPostLogin(datos).subscribe(
-      respuesta => { console.log(respuesta)
+      respuesta => { 
         this.funcionARealizar(respuesta)},
      
     );
@@ -69,7 +65,6 @@ export class LoginComponent implements OnInit {
       this.alerta = respuesta;
       sessionStorage.setItem("usuario", this.usuario.email);
 
-      alert(sessionStorage.getItem("usuario")); 
       this.ruteo.navigate(['/productos']);
   }
 

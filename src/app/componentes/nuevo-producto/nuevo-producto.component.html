@@ -7,7 +7,7 @@
     
     </button>
 </div>
-<div class="container mt-4">
+<div class="container m-4">
     <div class="row">
         <h2 class="text-center">Agregue un producto</h2>
     </div>
@@ -19,31 +19,24 @@
             <form>
                 
 
-                <div class="form-group">
-                    <label>Nombre: </label>
-                    <input type="text" class="form-control" id="txtNewProd"  [(ngModel)]="newProd" name="NewProd">
-                    
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="txtNewProd"  [(ngModel)]="newProd" name="NewProd" autofocus>
+                    <label for="floatingInput">Nombre: </label>
                 </div>
                 
                 
-                <div class="form-group">
-                    <label>Descripcion: </label>
-                    <input type="text" class="form-control" id="txtNewDesc"  [(ngModel)]="newDesc" name="NewDesc">
-                    
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="txtNewDesc"  [(ngModel)]="newDesc" name="NewDesc" autofocus>
+                    <label for="floatingInput">Descripcion: </label>
                 </div>
-                <div class="form-group">
-                    <label>Precio: </label>
-                    <input type="text" class="form-control" id="txtNewPrecio"  [(ngModel)]="newPrecio" name="NewPrecio" >
-                    
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="txtNewPrecio"  [(ngModel)]="newPrecio" name="NewPrecio" autofocus >
+                    <label for="floatingInput">Precio: </label>
                 </div>
-                <div class="form-group">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="txtNewCategoria"  [(ngModel)]="newCategoria" name="NewCategoria" autofocus >
+                    <label for="floatingInput">Categoria: </label>
                     
-                    <label>categoria: </label>
-
-                    <input type="text" class="form-control" id="txtNewCategoria"  [(ngModel)]="newCategoria" name="NewCategoria" >
-                    <!--<select >
-                        <option *ngFor="let item of categorias" value="item">{{item}}</option>
-                    </select>-->
                 </div>
                 
                 <button class="w-100 btn btn-lg btn-primary" type="button" id="btnGuardar"  (click)=guardar()>Guardar</button>

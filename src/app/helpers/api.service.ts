@@ -39,5 +39,11 @@ export class ApiService {
   enviarDatosPostConRuteo(ruteo:string, datos:FormData){
     return this.clienteHttp.post("https://apppushup.herokuapp.com/" + ruteo, datos);
   }
+  enviarDatosPostConRuteoString(ruteo:string, datos:FormData){
+    return this.clienteHttp.post("https://apppushup.herokuapp.com/" + ruteo, datos,{responseType: 'text'});
+  }
+  enviarDatosGetConRuteoString(ruteo:string){
+    return this.clienteHttp.get("https://apppushup.herokuapp.com/" + ruteo,{responseType: 'text'});
+  }
 
 }

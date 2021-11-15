@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Producto } from 'src/app/Entidades/producto';
+import { ApiService } from 'src/app/helpers/api.service';
 
 @Component({
   selector: 'app-nuevo-producto',
@@ -9,23 +12,39 @@ export class NuevoProductoComponent implements OnInit {
   
   newProd!: string; 
   newDesc!:string; 
-  newPrecio!: number;
+  newPrecio!: string;
   newCategoria!:string; 
   alerta!: string;
+  nuevoProd!:Producto; 
+  
 
-  categorias:Array<string>; 
+  constructor(private ruteo:Router, private api:ApiService) { 
 
-  constructor() { 
-
-    this.categorias=["Pesas","Bandas","Indumentaria","Estiramiento" ,"Otras"]; 
+    //this.categorias=["Pesas","Bandas","Indumentaria","Estiramiento" ,"Otras"]; 
   }
 
   ngOnInit(): void {
   }
 
   guardar(){
-    this.alerta= this.newProd+ ' '+this.newDesc+' '+ this.newPrecio+' '
+    
+    let datos = new FormData();
+    datos.append("nombre", this.newProd);
+    datos.append("descrip", this.newDesc);
+    datos.append("precio", this.newPrecio);
+    datos.append("categoria", this.newCategoria);
 
+
+    this.api.enviarDatosPostConRuteo("producto/agregar",datos).subscribe( respuesta => {
+      this.funcionARealizar(respuesta);
+      
+    });
   }
+  
+  funcionARealizar(respuesta:Object){
+    this.nuevoProd = <Producto>respuesta;
+    this.alerta = "producto agregado correctamente";
+  }
+  
 
 }
