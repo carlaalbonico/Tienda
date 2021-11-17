@@ -12,6 +12,7 @@ export class ProductosComponent implements OnInit {
   Productos!:Array<Producto>; 
   alerta: string | undefined;
   modificar!:number;
+  filter!:string;
 
   constructor(private ruteo:Router, private api:ApiService) { 
   

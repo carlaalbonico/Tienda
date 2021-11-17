@@ -13,6 +13,7 @@ import { MenuAdminComponent } from './componentes/menu-admin/menu-admin.componen
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { HttpClient,  HttpClientModule } from '@angular/common/http';
+import { FiltroPipe } from './transformaciones/filtro.pipe';
 
 
 
@@ -29,7 +30,8 @@ import { HttpClient,  HttpClientModule } from '@angular/common/http';
     NuevoProductoComponent, 
     MenuAdminComponent,
     NavbarComponent,
-    ProductoComponent
+    ProductoComponent,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,
