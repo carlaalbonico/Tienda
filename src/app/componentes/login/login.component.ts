@@ -9,23 +9,33 @@ import { ApiService } from 'src/app/helpers/api.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usuario:Usuario;  
+  usuario: Usuario;
   btnHabilitado!: boolean;
   alerta!: string;
+  presentacion={
+    "position": "relative",
+    "padding": ".75rem 1.25rem",
+    "margin-bottom": "1rem",
+    "border": "1px solid transparent",
+    "border-radius": "0.25 rem",
+    "background-color": "grey",
+    "color": "white"
+    
+  }
 
-  
+
 
   //falta ruteo 
-  constructor(private ruteo:Router, private api:ApiService) { 
-    
-    this.alerta='ingrese email y contraseña que debe contener un mínimo 8 caracteres al menos una letra mayúscula, una minúscula y un número'
+  constructor(private ruteo: Router, private api: ApiService) {
 
-    this.usuario= new Usuario(); 
+    this.alerta = 'ingrese email y contraseña que debe contener un mínimo 8 caracteres al menos una letra mayúscula, una minúscula y un número'
 
-    this.btnHabilitado =true; 
+    this.usuario = new Usuario();
+
+    this.btnHabilitado = true;
 
     if (sessionStorage.getItem("usuario") != null) {
-     this.ruteo.navigate(["/productos"]);
+      this.ruteo.navigate(["/productos"]);
     }
 
   }
@@ -41,39 +51,52 @@ export class LoginComponent implements OnInit {
 
     if (resultadoEmail && resultado) {
       this.btnHabilitado = false;
-    
+
     } else {
       this.btnHabilitado = true;
     }
   }
 
   ingresar(): void {
-    
+
     let datos = new FormData();
     datos.append("user", this.usuario.email);
     datos.append("pass", this.usuario.pass);
-    
+
     this.api.enviarDatosPostLogin(datos).subscribe(
-      respuesta => { 
-        this.funcionARealizar(respuesta)},
-     
+      respuesta => {
+        this.funcionARealizar(respuesta)
+      },
+
     );
   }
 
-  funcionARealizar(respuesta:any) {
+  funcionARealizar(respuesta: any) {
 
 
-    if(respuesta=="Acceso correcto"){//muestra la respuesta tipo texto!
+    if (respuesta == "Acceso correcto") {//muestra la respuesta tipo texto!
       this.alerta = respuesta;
       sessionStorage.setItem("usuario", this.usuario.email);
 
-      this.ruteo.navigate(['/productos']);}
-      else{
-        //muestra la respuesta tipo texto!
+      this.ruteo.navigate(['/productos']);
+    }
+    else {
+      //muestra la respuesta tipo texto!
       this.alerta = respuesta;
-      
+
+      this.presentacion = {
+        "position": "relative",
+        "padding": ".75rem 1.25rem",
+        "margin-bottom": "1rem",
+        "border": "1px solid transparent",
+        "border-radius": "0.25 rem",
+        "background-color": "#dc3545",
+        "color": "white"
+        
       }
-    
+
+    }
+
   }
 
 

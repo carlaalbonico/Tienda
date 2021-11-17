@@ -13,6 +13,7 @@ export class ProductosComponent implements OnInit {
   alerta: string | undefined;
   modificar!:number;
   filter!:string;
+  presentacion!: any;
 
   constructor(private ruteo:Router, private api:ApiService) { 
   
@@ -64,6 +65,16 @@ export class ProductosComponent implements OnInit {
     //muestra la respuesta tipo texto!
       this.alerta = respuesta;
      console.log(respuesta);
+     this.presentacion = {
+      "position": "relative",
+      "padding": ".75rem 1.25rem",
+      "margin-bottom": "1rem",
+      "border": "1px solid transparent",
+      "border-radius": "0.25 rem",
+      "background-color": "#28a745",
+      "color": "white"
+      
+    }
   }
 
 }

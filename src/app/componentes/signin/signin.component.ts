@@ -14,6 +14,16 @@ export class SigninComponent implements OnInit {
   alerta!:string;
   btnHabilitado!:boolean;
   usuario!:Usuario;
+  presentacion={
+    "position": "relative",
+    "padding": ".75rem 1.25rem",
+    "margin-bottom": "1rem",
+    "border": "1px solid transparent",
+    "border-radius": "0.25 rem",
+    "background-color": "grey",
+    "color": "white"
+    
+  }
 
   constructor(private api:ApiService) { 
     this.btnHabilitado =true;//deshabilitado 
@@ -51,17 +61,37 @@ export class SigninComponent implements OnInit {
         
       });
     } else {
-      (<HTMLElement>document.getElementById('respuesta')).style.color = '#ff0000';
+      
       this.alerta = "Las contraseñas no coinciden";
       this.newPass = "";
       this.newPass2 = "";
+      this.presentacion = {
+        "position": "relative",
+        "padding": ".75rem 1.25rem",
+        "margin-bottom": "1rem",
+        "border": "1px solid transparent",
+        "border-radius": "0.25 rem",
+        "background-color": "#dc3545",
+        "color": "white"
+        
+      }
     }
   }
     funcionARealizar(respuesta:Object){
       this.usuario = <Usuario>respuesta;
-      (<HTMLElement>document.getElementById('respuesta')).style.color = '#0000ff';
-      (<HTMLElement>document.getElementById('respuesta')).style.fontSize = '14px';
+     
       this.alerta = "Usuario generado correctamente";
+
+      this.presentacion = {
+        "position": "relative",
+        "padding": ".75rem 1.25rem",
+        "margin-bottom": "1rem",
+        "border": "1px solid transparent",
+        "border-radius": "0.25 rem",
+        "background-color": "#28a745",
+        "color": "white"
+        
+      }
       
     }
   

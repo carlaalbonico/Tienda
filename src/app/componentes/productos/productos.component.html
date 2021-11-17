@@ -59,7 +59,7 @@
                     </td>
         
                     <td>
-                        <label *ngIf="modificar!=item.id"><td>{{item.precio}}</td></label>
+                        <label *ngIf="modificar!=item.id"><td>${{item.precio}}</td></label>
                         <input *ngIf="modificar==item.id" type="text" class="form-control" id="txtPrecio"  [(ngModel)]="item.precio" name="Precio{{item.precio}}" >
                     </td>
                 
@@ -90,7 +90,7 @@
         </table>
 
     </div>
-    <div  id="cartel" >
+    <div  id="cartel" [ngStyle]="presentacion" >
                 <p id="respuesta">{{alerta}}</p>
     </div>
 

@@ -16,6 +16,7 @@ export class NuevoProductoComponent implements OnInit {
   newCategoria!:string; 
   alerta!: string;
   nuevoProd!:Producto; 
+  presentacion!: any;
   
 
   constructor(private ruteo:Router, private api:ApiService) { 
@@ -44,6 +45,19 @@ export class NuevoProductoComponent implements OnInit {
   funcionARealizar(respuesta:Object){
     this.nuevoProd = <Producto>respuesta;
     this.alerta = "producto agregado correctamente";
+
+    this.presentacion = {
+      "position": "relative",
+      "padding": ".75rem 1.25rem",
+      "margin-bottom": "1rem",
+      "border": "1px solid transparent",
+      "border-radius": "0.25 rem",
+      "background-color": "#28a745",
+      "color": "white"
+      
+    }
+    
+
   }
   
 
