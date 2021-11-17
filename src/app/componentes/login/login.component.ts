@@ -61,11 +61,19 @@ export class LoginComponent implements OnInit {
   }
 
   funcionARealizar(respuesta:any) {
-    //muestra la respuesta tipo texto!
+
+
+    if(respuesta=="Acceso correcto"){//muestra la respuesta tipo texto!
       this.alerta = respuesta;
       sessionStorage.setItem("usuario", this.usuario.email);
 
-      this.ruteo.navigate(['/productos']);
+      this.ruteo.navigate(['/productos']);}
+      else{
+        //muestra la respuesta tipo texto!
+      this.alerta = respuesta;
+      
+      }
+    
   }
 
 

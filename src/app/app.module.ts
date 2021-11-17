@@ -14,6 +14,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { ProductoComponent } from './componentes/producto/producto.component';
 import { HttpClient,  HttpClientModule } from '@angular/common/http';
 import { FiltroPipe } from './transformaciones/filtro.pipe';
+import { FondoDirective } from './directivas/fondo.directive';
 
 
 
@@ -31,7 +32,8 @@ import { FiltroPipe } from './transformaciones/filtro.pipe';
     MenuAdminComponent,
     NavbarComponent,
     ProductoComponent,
-    FiltroPipe
+    FiltroPipe,
+    FondoDirective
   ],
   imports: [
     BrowserModule,

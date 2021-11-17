@@ -27,7 +27,7 @@
             
             <label>Filtro:</label>
             <div class="col-sm-7">
-                <input id="filter" [(ngModel)]="filter">
+                <input id="filter" [(ngModel)]="filter" placeholder="buscar nombre">
             </div>
             
         </div>
@@ -46,7 +46,7 @@
             </tr>
             </thead>
             <tbody id="tableProd">
-                <tr *ngFor="let item of Productos | filtro:filter"  >
+                <tr *ngFor="let item of Productos | filtro:filter" appFondo="#C2C2C2"  >
                     
                     <td>
                         <label *ngIf="modificar!=item.id"><td>{{item.nombre}}</td></label>
