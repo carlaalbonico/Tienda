@@ -95,5 +95,27 @@ footer{
     margin: auto;
    
   }    
+
+  h1{font-size: 80px;
+    color:white; 
+  }
+  
+
+  h1.jumbotron-heading2{font-size: 30px;
+    color:black; 
+  }
+  h1.jumbotron-heading3{font-size: 50px;
+    color:red; 
+  }
+  p.lead {
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+  }
+  p.lead2 {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+
   
   

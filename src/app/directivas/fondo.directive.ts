@@ -11,7 +11,7 @@ export class FondoDirective {
   @Input('appFondo') highlightColor  = '';
 
   @HostListener('mouseenter') onMouseEnter(): void {
-    this.highlight(this.highlightColor || this.defaultColor ||'green');
+    this.highlight(this.highlightColor || this.defaultColor ||'grey');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
